@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefa</title>
+    <link rel="stylesheet" type="text/css" href="static/tarefas.css">
+</head>
+<body>
+    <div>
+        <div class="divtexto">
+            <div>
+                <textarea name="texto" id="txt_area"></textarea>
+            </div>
+            <button class="button_tarefa" onclick=adcionar()>+</button>
+        </div>
+        <div class="divtarefa" id="div_tarefa">
+            <div class="segment_div">
+                <button class="segment_button" onclick=trocar_foco(id) id="todos">todos</button>
+                <button class="segment_button" onclick=trocar_foco(id) id="em_andamento">andamento</button>
+                <button class="segment_button" onclick=trocar_foco(id) id="concluido">concluido</button>
+            </div>
+        </div>
+    </div>
+    <script src="tarefas.js" type="text/javascript"></script>
+
+</body>
+</html>

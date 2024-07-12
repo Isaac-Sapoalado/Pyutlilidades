@@ -1,0 +1,42 @@
+body{
+    background-color: rgb(27, 27, 27);
+    
+}
+.conteiner{
+    margin: auto;
+    padding-top: 100px;
+    height: 100%;
+    width: fit-content;
+}
+.card{
+    width: 400px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: rgb(20, 20, 20);
+    justify-content: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    color: white;
+}
+.buttoncard{
+    background-color: rgb(20, 20, 20);
+    margin: 0px;
+    height: 30px;
+    width: 80px;
+    border-radius: 20px;
+    margin-left: 320px;
+    border: 0px;
+    color: white;
+}
+.buttoncard:hover{
+    background-color: rgb(30, 30, 30);
+}
+.textcard{
+    text-align: center;
+
+}
+.autor{
+    text-align: end;
+    align-items: end;
+    margin-right: 50px;
+}

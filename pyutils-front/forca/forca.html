@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da forca</title>
+    <link rel="stylesheet" href="forca.css">
+</head>
+<body>
+    <div>
+        <div id="div_maior" class="div_maior">
+            <div class="tentativa">
+                <p>tentativas:</p>
+                <p id="tentativas">5</p>
+            </div>
+            <div class="tabled">
+                <table id="tabela">
+                </table>
+            </div>
+        </div>
+        <div class="div_chute">
+            <input type="text" maxlength="1" class="text_chute" id="chute">
+            <button onclick=chutar() id="chutebtn">Chutar</button>
+        </div>
+    </div>
+    <script src="forca.js"></script>
+</body>
+</html>

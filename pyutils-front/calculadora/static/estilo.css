@@ -1,0 +1,38 @@
+body{
+    background-color: rgb(27, 27, 27);
+}
+.div_back,.div_main{
+    background-color: rgb(20, 20, 19);
+    margin-bottom: 40px;
+}
+
+.div_back{
+    width: 100%;
+}
+
+.div_main{
+    padding-top: 1%;
+}
+textarea{
+    resize: none;
+    background-color: rgb(27, 27, 27);
+    border-color: transparent;
+}
+
+.button_back{
+    background-color: rgba(20, 20, 19, 0);
+}
+.grid_calculadora {
+    display: grid;
+    grid-template-columns:auto auto auto auto;
+    background-color: transparent;
+    padding: 10px;
+  }
+  .item_calculadora {
+    background-color: rgb(27, 27, 27);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    color: whitesmoke;
+    font-size: 30px;
+    text-align: center;
+  }
