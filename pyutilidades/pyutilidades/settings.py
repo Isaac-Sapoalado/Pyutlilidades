@@ -28,7 +28,9 @@ SECRET_KEY = 'django-insecure-w&ydf4s@)+or$la=j6)(6^$p9k6i6zu06s#i+(md&f2^5vj!6d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pyutilidades.onrender.com']
+ALLOWED_HOSTS = ['*']
+
+CSRF_TRUSTED_ORIGINS = ['https://pyutilidades.onrender.com']
 
 CORS_ALLOWED_ORIGINS = [
     'https://pyutilidades.vercel.app'
