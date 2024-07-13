@@ -20,9 +20,11 @@ from django.conf.urls.static import static
 from django.urls import path
 from todo.views import Tarefa_View,Detail_Tarefa_View
 from citacoes.views import CitacaoView
+from forca.views import Palavraview
 
 urlpatterns = [
     path('api/tarefa/', Tarefa_View.as_view()),
+    path('api/palavra/', Palavraview.as_view()),
     path('api/tarefa/<int:pk>', Detail_Tarefa_View.as_view()),
     path('api/cita/', CitacaoView.as_view()),
     path('admin/', admin.site.urls),

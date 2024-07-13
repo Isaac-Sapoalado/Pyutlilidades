@@ -31,8 +31,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 CORS_ALLOWED_ORIGINS = [
-    
-    'null']
+    'https://pyutilidades.vercel.app',
+    'null'
+    ]
 
 # Application definition
 
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'todo',
     'citacoes',
+    'forca',
 ]
 
 MIDDLEWARE = [

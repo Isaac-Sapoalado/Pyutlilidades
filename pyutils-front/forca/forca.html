@@ -9,9 +9,14 @@
 <body>
     <div>
         <div id="div_maior" class="div_maior">
-            <div class="tentativa">
-                <p>tentativas:</p>
-                <p id="tentativas">5</p>
+            <div class="top">
+                <div id="dicadiv">
+                </div>
+                <div class="tentativa" >
+                    <p>tentativas:</p>
+                    <p id="tentativas">5</p>
+                </div>
+                
             </div>
             <div class="tabled">
                 <table id="tabela">
@@ -20,6 +25,7 @@
         </div>
         <div class="div_chute">
             <input type="text" maxlength="1" class="text_chute" id="chute">
+            <button onclick=dica() id="dicabtn">Dica</button>
             <button onclick=chutar() id="chutebtn">Chutar</button>
         </div>
     </div>

@@ -4,6 +4,9 @@ body{
     justify-content: center;
     align-items: center;
 }
+button{
+    margin-left: 15px;
+}
 .div_chute{
     margin-top: 30px;
     width: 600px;
@@ -17,16 +20,23 @@ body{
     width: 600px;
     height: 400px;
 }
-
+.top{
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
 .tentativa{
     font-size:x-large;
+    height: 30px;
+    width: 50%;
     display: flex;
-    height: 40px;
     justify-content: end;
     align-items: center;
 }
 .tabled{
-    height: 360px;
+    height: 340px;
     display: block;
     align-content: center;
     align-items: center;
@@ -54,6 +64,6 @@ tr{
     
 }
 .text_chute{
-    width: 400px;
-    margin-right: 90px;
+    width: 375px;
+    margin-right: 75px;
 }
