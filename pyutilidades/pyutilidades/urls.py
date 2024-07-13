@@ -27,7 +27,7 @@ urlpatterns = [
     path('api/palavra/', Palavraview.as_view()),
     path('api/tarefa/<int:pk>', Detail_Tarefa_View.as_view()),
     path('api/cita/', CitacaoView.as_view()),
-    path('admin/', admin.site.urls),
+    path('', admin.site.urls),
 ]
 
 if settings.DEBUG:
