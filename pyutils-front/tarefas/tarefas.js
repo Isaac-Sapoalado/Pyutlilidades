@@ -2,7 +2,7 @@
 var foco;
 async function post(texto,conc){
     await fetch(
-        "http://127.0.0.1:8000/api/tarefa/",{
+        "https://pyutilidades.onrender.com/api/tarefa/",{
             method: 'POST',
             mode: 'cors',
             headers: {
@@ -20,7 +20,7 @@ async function post(texto,conc){
 
 async function put(texto,conc,pk){
     await fetch(
-        "http://127.0.0.1:8000/api/tarefa/"+pk,{
+        "https://pyutilidades.onrender.com/api/tarefa/"+pk,{
             method: 'PUT',
             mode: 'cors',
             headers: {
@@ -38,7 +38,7 @@ async function put(texto,conc,pk){
 
 async function del(pk){
     await fetch(
-        "http://127.0.0.1:8000/api/tarefa/"+pk,{
+        "https://pyutilidades.onrender.com/api/tarefa/"+pk,{
             method: 'DELETE',
             mode: 'cors',
             headers: {
@@ -54,7 +54,7 @@ async function del(pk){
 async function get() {
     var recebe;
     var v = await fetch(
-    "http://127.0.0.1:8000/api/tarefa/",{
+    "https://pyutilidades.onrender.com/api/tarefa/",{
         method: 'GET',
         mode: 'cors',
         headers: {

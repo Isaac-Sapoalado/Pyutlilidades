@@ -1,7 +1,7 @@
 
 async function get(){
     var dado;
-    fet = await fetch("http://127.0.0.1:8000/api/cita/", {
+    fet = await fetch("https://pyutilidades.onrender.com/api/cita/", {
         mode: 'cors',
         method: "GET",
         headers: {
