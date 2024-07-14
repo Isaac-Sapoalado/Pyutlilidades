@@ -1,0 +1,52 @@
+body{
+    background-color: rgb(27, 27, 27);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.div_maior{
+    margin-top: 100px;
+    width: 402px;
+    height: 402px;
+}
+.linha{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 134px;
+}
+.div_vezresult{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 402px;
+    height: 80px;
+}
+
+.divmeio,.item,.divmeiov,.divmeioh{
+    height: 134px;
+    width: 134px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: white;
+}
+
+.divmeioh{
+    border-bottom: 2px solid rgb(255, 255, 255);
+    border-top: 2px solid rgb(255, 255, 255);
+}
+.divmeiov{
+    border-left: 2px solid rgb(255, 255, 255);
+    border-right: 2px solid rgb(255, 255, 255);
+}
+.divmeio{
+    border-left: 2px solid rgb(255, 255, 255);
+    border-right: 2px solid rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(255, 255, 255);
+    border-top: 2px solid rgb(255, 255, 255);
+}
