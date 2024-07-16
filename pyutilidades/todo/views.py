@@ -25,14 +25,14 @@ class Detail_Tarefa_View(APIView):
     
     def get_object(self, pk):
         try:
-            tarefa = Tarefa.objects.get(pk=pk)
+            tarefa = Tarefa.objects.filter(user=pk)
             return tarefa
         except Tarefa.DoesNotExist:
             raise Http404
 
     def get(self, request, pk):
         tarefa = self.get_object(pk)
-        serializer = Tarefa_serializer(instance=tarefa)
+        serializer = Tarefa_serializer(instance=tarefa,many=True)
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
     def delete(self, request, pk):

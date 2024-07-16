@@ -3,11 +3,13 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .serializer import CitacaoSerializer
 from .models import Citacao
+from rest_framework.permissions import AllowAny
 
 # Create your views here.
 
 class CitacaoView(APIView):
     
+    permission_classes = [AllowAny]
 
     def random_get():
         from random import randint

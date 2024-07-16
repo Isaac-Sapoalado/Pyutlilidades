@@ -4,5 +4,5 @@ from .models import Tarefa
 class Tarefa_serializer(ModelSerializer):
     class Meta:
         model = Tarefa
-        fields = ['tarefa', 'feito','pk']
+        fields = ['tarefa', 'feito','user']
     
