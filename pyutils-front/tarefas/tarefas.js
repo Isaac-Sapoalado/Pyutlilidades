@@ -100,7 +100,7 @@ function adcionar(objec=false){
 function gerar_linha(seq,chave,bol,novo=false){
     //inicializado variaveis importantes
     {
-    var container = document.getElementById("div_tarefa")
+    var container = document.getElementById("conteiner-tarefa")
     var img1 = document.createElement("img")
     var img2 = document.createElement("img")
     var box = document.createElement("input")
@@ -154,7 +154,7 @@ function editar(id,checke=null) {
         var caixa = document.getElementsByName("box"+id)
         caixa = caixa[0].checked
         if (texto != "" && texto != text){
-            var conteiner = document.getElementById("div_tarefa")
+            var conteiner = document.getElementById("conteiner-tarefa")
             div.children.item(0).innerHTML = texto
             put(texto,caixa,id)
         }
@@ -164,7 +164,7 @@ function editar(id,checke=null) {
 }
 
 function deletar(id){
-    var conteiner = document.getElementById("div_tarefa")
+    var conteiner = document.getElementById("conteiner-tarefa")
     var div = document.getElementById(id)
     conteiner.removeChild(div)
     del(pk=id)

@@ -1,5 +1,19 @@
 body{
     background-color: rgb(27, 27, 27);
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.header{
+    background-color: rgb(37, 37, 37);
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main{
     justify-content: center;
     display:flex;
 }
@@ -10,10 +24,20 @@ body{
     overflow-y:auto;
 
 }
+.divtarefa{
+    background-color: rgb(20, 20, 20);
+    width: 400px;
+    height:450px;
+    text-align: center;
+    overflow-y: scroll;
+}
+.divtarefa::-webkit-scrollbar{
+    display: none;
+}
 .divtexto{
     background-color: rgb(20, 20, 20);
     width: 400px;
-    height: 100px;
+    height: 80px;
     display: flex;
     align-items: center;
     
@@ -36,8 +60,9 @@ textarea{
 }
 .segment_div{
     display: flex;
+    position:fixed;
+    width: 400px;
     justify-content: center;
-    padding-top: 10px;
 }
 .segment_button{
     width: 100px;
@@ -45,12 +70,6 @@ textarea{
     border: unset;
     background-color: rgb(27, 27, 27);
     color: white;
-}
-.divtarefa{
-    background-color: rgb(20, 20, 20);
-    width: 400px;
-    height:515px;
-    text-align: center;
 }
 
 .divlinha{
@@ -63,4 +82,8 @@ textarea{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.conteiner-tarefa{
+    margin-top: 30px;
 }

@@ -1,5 +1,16 @@
 body{
     background-color: rgb(27, 27, 27);
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.header{
+    background-color: rgb(37, 37, 37);
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .div_back,.div_main{
     background-color: rgb(20, 20, 19);
