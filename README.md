@@ -32,4 +32,4 @@ terminei o jogo da velha e vou começar a estudar autenticação e segurança pa
 
 ---17/07/2024---
 -
-Me aprofundando mais em bagulhos sobre segurança(CSRF,HEADERS HTTP), cookies e armazenamento de sessão e outras coisas. Terminei parte da autenticação pelo lado do server e pelo cliente, pretendo ter a funcinalidade de cadastro,login,personalização de experiência para usuarios autenticados e anônimos.
+Me aprofundando mais em bagulhos sobre segurança(CSRF,HEADERS HTTP), cookies e armazenamento de sessão e outras coisas. Terminei parte da autenticação pelo lado do server e pelo cliente, pretendo ter a funcinalidade de cadastro,login,personalização de experiência para usuarios autenticados e anônimos, prontos até dia 30 desse mês.
