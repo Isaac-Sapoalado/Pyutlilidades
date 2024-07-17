@@ -26,6 +26,10 @@ tive algumas dores de cabeça nesse ponto devido a hosts não aceitos,origens n�
 Mas no fim do Dia o tanto o front-end quanto o back-end funcionaram.
 E comecei a fazer um simples joguinho da velha 3X3
 
----14/07/2027---
+---14/07/2024---
 -
 terminei o jogo da velha e vou começar a estudar autenticação e segurança para criar as proximas apps e funcionalidades, e também terminar o gerenciador de tarefas em 100% na parte do back-end.
+
+---17/07/2024---
+-
+Me aprofundando mais em bagulhos sobre segurança(CSRF,HEADERS HTTP), cookies e armazenamento de sessão e outras coisas. Terminei parte da autenticação pelo lado do server e pelo cliente, pretendo ter a funcinalidade de cadastro,login,personalização de experiência para usuarios autenticados e anônimos.
