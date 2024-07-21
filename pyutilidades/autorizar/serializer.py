@@ -11,7 +11,7 @@ class UsuarioSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['username', 'password', 'email']
+        fields = ['pk','username', 'password', 'email']
 
     def create(self, validate_data):
         # Esse método é chamdo no save() do serializer

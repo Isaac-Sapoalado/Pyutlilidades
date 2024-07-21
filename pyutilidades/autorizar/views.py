@@ -6,6 +6,7 @@ from .serializer import UsuarioSerializer
 from rest_framework.authtoken.models import Token
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.permissions import AllowAny
+from rest_framework.views import status
 # Create your views here.
 
 class CadastroView(APIView):
@@ -16,7 +17,7 @@ class CadastroView(APIView):
         serializer = UsuarioSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response(serializer.data,status=201)
+        return Response(serializer.data,status=status.HTTP_201_CREATED)
 
 class LoginView(APIView):
 
@@ -31,5 +32,21 @@ class LoginView(APIView):
         if usuario != []:
             usuario = usuario[0]
             usuario = UsuarioSerializer(usuario)
-            return Response(data={'access_token': token.key,'user':usuario.data})
-        return Response(data={'access_token': token.key})
+            return Response(data={'access_token': token.key,'user':usuario.data},status=status.HTTP_201_CREATED)
+        return Response(data={'access_token': token.key},status=status.HTTP_201_CREATED)
+
+class AlteraView(APIView):
+
+    def put(self,request):
+        try:
+            new_pass = request.data.pop('new_password')
+            user = User.objects.get(pk=request.data['pk'])
+            if new_pass == user.password or user.password != request.data['password']:
+                return Response(data={'detail':'passwords must be differents'},status=status.HTTP_400_BAD_REQUEST)
+            request.data['password'] = new_pass
+            serializer = UsuarioSerializer(instance=user,data=request.data)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+            return Response(serializer.data,status=203)
+        except:
+            return Response(data={'detail':'"new_password" parameter not found'},status=status.HTTP_404_NOT_FOUND,)

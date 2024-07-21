@@ -4,6 +4,10 @@ body{
     margin-left: 0px;
     margin-right: 0px;
 }
+.logo_a{
+    text-decoration-line: none;
+    color: black;
+}
 main{
     display:grid;
     justify-content: center;

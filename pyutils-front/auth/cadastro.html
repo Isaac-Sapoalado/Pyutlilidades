@@ -2,17 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta id="viewport" content="width=device-width, initial-scale=1.0">
     <title>cadasrto</title>
+    <link href="static/cadastro.css" rel="stylesheet">
     
 </head>
 <body>
-    <form action="http://127.0.0.1:8000/auth/cadastrar/" method="post">
-        <input type="text" name="nome"><br>
-        <input type="email" name="email"><br>
-        <input type="password" name="senha"><br>
-        <button onclick="cadastro()">cadastrar</button>
-    </form>
-    <script src="static/cad.js"></script>
+    <header>
+        <div class="header">
+            <a href="C:\Users\sapoa\Pyutlilidades\pyutils-front\index.html" class="logo_a">
+                <h2>Pyutilidades</h2>
+            </a>
+        </div>
+    </header>
+    <main>
+        <div class="card">
+            <form>
+                <label>Nome:</label><br>
+                <input type="text" id="nome"><br>
+                <label>Email</label><br>
+                <input type="email" id="email"><br>
+                <label>Senha</label><br>
+                <input type="password" id="senha"><br>
+                <label>esqueci a senha</label>
+            </form>
+            <button onclick="login()">cadastrar</button>
+        </div>
+    </main>
+    <script src="static/auth.js"></script>
 </body>
 </html>

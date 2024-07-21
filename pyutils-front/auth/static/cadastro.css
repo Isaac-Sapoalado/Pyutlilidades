@@ -16,15 +16,17 @@ body{
     justify-content: space-between;
     align-items: center;
 }
-.container{
-    justify-content: space-between;
+main{
     display: flex;
-    padding: 50px;
-    
+    align-items: center;
+    justify-content: center;
 }
-.item{
-    background-color: white;
-    border-radius: 20px;
-    width: 100px;
-    height: 100px;
+.card{
+    background-color: rgb(121, 116, 126);
+    display: grid;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px;
+    height: 500px;
+    width: 300px;
 }
