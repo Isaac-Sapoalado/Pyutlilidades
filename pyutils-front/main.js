@@ -1,4 +1,4 @@
-async function iniciar(){
+function iniciar(){
     var div = document.getElementById("login-dados")
     if (!(sessionStorage.getItem("token")==null)){
         var nome = sessionStorage.getItem('username')
