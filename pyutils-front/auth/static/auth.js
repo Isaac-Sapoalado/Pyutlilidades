@@ -36,7 +36,7 @@ async function login(){
             sessionStorage.setItem('token',('Token ' + dado.access_token))
         })
         .catch(error => autherror(error))
-    history.back()
+    window.location = 'https://pyutilidades.vercel.app'
 
     
 }
