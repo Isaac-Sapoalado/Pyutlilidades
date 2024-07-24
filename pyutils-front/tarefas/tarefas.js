@@ -1,14 +1,23 @@
 
 var foco;
+var token;
+var chave;
+if (!(sessionStorage.getItem("token")==null)){
+    token = sessionStorage.getItem("token")
+    chave = sessionStorage.getItem("pk")
+}
 async function post(texto,conc){
+    console.log(typeof(chave))
     await fetch(
-        "https://pyutilidades.onrender.com/api/tarefa/",{
+        `https://pyutilidades.onrender.com/api/tarefa/${chave}`,{
             method: 'POST',
             mode: 'cors',
             headers: {
-                'Content-Type':'application/json'
+                'Content-Type':'application/json',
+                'Authorization':token
             },
             body: JSON.stringify({
+                'user':chave,
                 'tarefa':texto,
                 'feito':conc
             })
@@ -20,15 +29,18 @@ async function post(texto,conc){
 
 async function put(texto,conc,pk){
     await fetch(
-        "https://pyutilidades.onrender.com/api/tarefa/"+pk,{
+        `https://pyutilidades.onrender.com/api/tarefa/${chave}`,{
             method: 'PUT',
             mode: 'cors',
             headers: {
-                'Content-Type':'application/json'
+                'Content-Type':'application/json',
+                'Authorization':token
             },
             body: JSON.stringify({
+                
                 'tarefa':texto,
-                'feito':conc
+                'feito':conc,
+                'pk':pk
             })
         }
     
@@ -36,13 +48,14 @@ async function put(texto,conc,pk){
         .catch(error => console.log(error))
 }
 
-async function del(pk){
+async function del(){
     await fetch(
-        "https://pyutilidades.onrender.com/api/tarefa/"+pk,{
+        `https://pyutilidades.onrender.com/api/tarefa/${chave}`,{
             method: 'DELETE',
             mode: 'cors',
             headers: {
-                'Content-Type':'application/json'
+                'Content-Type':'application/json',
+                'Authorization':token
             }
         }
     
@@ -54,11 +67,12 @@ async function del(pk){
 async function get() {
     var recebe;
     var v = await fetch(
-    "https://pyutilidades.onrender.com/api/tarefa/",{
+    `https://pyutilidades.onrender.com/api/tarefa/${chave}`,{
         method: 'GET',
         mode: 'cors',
         headers: {
-            'Content-Type':'application/json'
+            'Content-Type':'application/json',
+            'Authorization':token
         }
     }
 
@@ -67,7 +81,6 @@ async function get() {
         recebe = data
     })
     .catch(error => console.log(error))
-    
     for (i in recebe){
         obj = [
             recebe[i].tarefa,
@@ -80,24 +93,23 @@ async function get() {
 }
 
 function adcionar(objec=false){
-    var conteiner = document.getElementById("div_tarefa")
+    var conteiner = document.getElementById("conteiner-tarefa")
     if (objec === false){
         var texto = document.getElementById("txt_area")
-        
         var txt = texto.value
         if (txt != ""){
-            gerar_linha(txt,conteiner,false,novo=true)
+            gerar_linha(txt,conteiner.lastChild.id,false,novo=true)
             texto.value = ""
             }
     }else{
-        gerar_linha(seq=obj[0],chave=obj[2],bol=obj[1])
+        gerar_linha(seq=obj[0],pk=obj[2],bol=obj[1])
     }
     
     
 
 }
 
-function gerar_linha(seq,chave,bol,novo=false){
+function gerar_linha(seq,pk,bol,novo=false){
     //inicializado variaveis importantes
     {
     var container = document.getElementById("conteiner-tarefa")
@@ -108,7 +120,7 @@ function gerar_linha(seq,chave,bol,novo=false){
     var div2 = document.createElement("div")
     var div3 = document.createElement("div")
 
-    div3.className = "divlinha",div3.id=chave
+    div3.className = "divlinha",div3.id=pk
     }
     //configurando icones
     {
@@ -167,7 +179,7 @@ function deletar(id){
     var conteiner = document.getElementById("conteiner-tarefa")
     var div = document.getElementById(id)
     conteiner.removeChild(div)
-    del(pk=id)
+    del()
 }
 
 

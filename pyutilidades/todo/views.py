@@ -19,9 +19,9 @@ class Tarefa_View(APIView):
 
 class Detail_Tarefa_View(APIView):
     
-    def verificar_token(self,req):
+    def verificar_token(self,req,pk):
         token = req.headers['Authorization'][6:]
-        user = User.objects.get(pk=req.data['user'])
+        user = User.objects.get(pk=pk)
         return token == Token.objects.get(user=user).key        
 
     def get_object(self, pk):
@@ -32,7 +32,8 @@ class Detail_Tarefa_View(APIView):
             raise Http404
 
     def post(self,request,pk):
-        if self.verificar_token(request):
+        if self.verificar_token(request,pk=pk):
+            print("entrei")
             serializer = Tarefa_serializer(data=request.data)
             serializer.is_valid(raise_exception=True)
             serializer.save()
@@ -40,22 +41,22 @@ class Detail_Tarefa_View(APIView):
         return Response(data={'token_error':'invalid token'}, status=401)
 
     def get(self, request, pk):
-        if self.verificar_token(request):
+        if self.verificar_token(request,pk=pk):
             tarefa = self.get_object(pk)
             serializer = Tarefa_serializer(instance=tarefa,many=True)
             return Response(data=serializer.data, status=status.HTTP_200_OK)
         return Response(data={'token_error':'invalid token'}, status=401)
 
     def delete(self, request, pk):
-        if self.verificar_token(request):
+        if self.verificar_token(request,pk=pk):
             tarefa = self.get_object(pk)
             tarefa.delete()
             return Response(status=status.HTTP_204_NO_CONTENT)
         return Response(data={'token_error':'invalid token'}, status=401)
 
     def put(self, request, pk):
-        if self.verificar_token(request):
-            tarefa = self.get_object(pk)
+        if self.verificar_token(request,pk=pk):
+            tarefa = Tarefa.objects.get(pk=request.data['pk'])
             serializer = Tarefa_serializer(instance=tarefa, data=request.data)
             if serializer.is_valid():
                 serializer.save()

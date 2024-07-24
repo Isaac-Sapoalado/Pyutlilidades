@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://pyutilidades.onrender.com']
 
 CORS_ALLOWED_ORIGINS = [
-    'https://pyutilidades.vercel.app','null'
+    'https://pyutilidades.vercel.app'
     ]
 
 # Application definition

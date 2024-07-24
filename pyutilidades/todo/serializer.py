@@ -1,8 +1,9 @@
-from rest_framework.serializers import ModelSerializer
+from rest_framework import serializers
 from .models import Tarefa
 
-class Tarefa_serializer(ModelSerializer):
+class Tarefa_serializer(serializers.ModelSerializer):
+
     class Meta:
         model = Tarefa
-        fields = ['tarefa', 'feito','user']
+        fields = ['tarefa', 'feito','pk','user']
     

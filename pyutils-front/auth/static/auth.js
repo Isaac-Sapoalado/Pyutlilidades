@@ -1,7 +1,7 @@
 async function cadastro(){
     var form = form_elements()
     r = await fetch(
-        "http://127.0.0.1:8000/auth/cadastrar/",{
+        "https://pyutilidades.onrender.com/auth/cadastrar/",{
             method: 'POST',
             mode: 'cors',
             headers: {
@@ -12,13 +12,13 @@ async function cadastro(){
                 'email':form[1].value,
                 'password':form[2].value
             })
-        }).then(response => response.json()).then(dado => {return dado})
+        }).then(response => response.json()).then(dado => {login()})
         .catch(error => console.log(error))
 }
 async function login(){
     var form = form_elements()
     data = await fetch(
-        "http://127.0.0.1:8000/auth/login/",{
+        "https://pyutilidades.onrender.com/auth/login/",{
             method: 'POST',
             mode: 'cors',
             headers: {
@@ -31,10 +31,14 @@ async function login(){
             })
         })
         .then(response => response.json()).then(dado => {
-            sessionStorage.setItem('user',dado.user)
+            sessionStorage.setItem('pk',dado.user.pk)
+            sessionStorage.setItem('username',dado.user.username)
             sessionStorage.setItem('token',('Token ' + dado.access_token))
         })
         .catch(error => autherror(error))
+    history.back()
+
+    
 }
 
 function autherror(erro){
