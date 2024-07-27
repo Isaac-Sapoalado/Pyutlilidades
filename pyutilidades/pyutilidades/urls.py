@@ -22,6 +22,7 @@ from todo.views import Tarefa_View,Detail_Tarefa_View
 from citacoes.views import CitacaoView
 from forca.views import Palavraview
 from autorizar.views import CadastroView,LoginView,AlteraView
+from blog.views import BlogView,ComentarioView,InteracaoView,AllBlogView,TagBlogView,TagView
 
 
 urlpatterns = [
@@ -29,6 +30,12 @@ urlpatterns = [
     path('api/palavra/', Palavraview.as_view()),
     path('api/tarefa/<int:pk>', Detail_Tarefa_View.as_view()),
     path('api/cita/', CitacaoView.as_view()),
+    path('api/blog/', AllBlogView.as_view()),
+    path('api/tagblog/', TagBlogView.as_view()),
+    path('api/tag/', TagView.as_view()),
+    path('api/blog/<int:pk>', BlogView.as_view()),
+    path('api/blog/coments/<int:pk>', ComentarioView.as_view()),
+    path('api/blog/inter/<int:pk>', InteracaoView.as_view()),
     path('auth/cadastrar/', CadastroView.as_view(),name='cadastro'),
     path('auth/login/', LoginView.as_view(),name='login'),
     path('auth/edit/', AlteraView.as_view(),name='alterar'),

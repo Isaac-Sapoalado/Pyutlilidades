@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://pyutilidades.onrender.com']
 
 CORS_ALLOWED_ORIGINS = [
-    'https://pyutilidades.vercel.app'
+    'https://pyutilidades.vercel.app','null'
     ]
 
 # Application definition
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'citacoes',
     'forca',
     'autorizar',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -123,7 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE =  'America/Sao_Paulo'
 
 USE_I18N = True
 

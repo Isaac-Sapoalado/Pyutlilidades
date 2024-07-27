@@ -9,6 +9,22 @@ from rest_framework.permissions import AllowAny
 from rest_framework.views import status
 # Create your views here.
 
+def verificar_token(req,pk):
+        token = req.headers['Authorization'][6:]
+        user = User.objects.get(pk=pk)
+        return token == Token.objects.get(user=user).key
+
+def verificar_user(req,pk):
+    try:
+        userpk = req.data['user']
+        return int(pk)==int(userpk)
+    except:
+        return Response(data={'body_error':'missing user or pk'}, status=status.HTTP_404_NOT_FOUND)
+
+
+
+
+
 class CadastroView(APIView):
 
     permission_classes =[AllowAny]

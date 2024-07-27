@@ -7,7 +7,6 @@ if (!(sessionStorage.getItem("token")==null)){
     chave = sessionStorage.getItem("pk")
 }
 async function post(texto,conc){
-    console.log(typeof(chave))
     await fetch(
         `https://pyutilidades.onrender.com/api/tarefa/${chave}`,{
             method: 'POST',
@@ -37,7 +36,7 @@ async function put(texto,conc,pk){
                 'Authorization':token
             },
             body: JSON.stringify({
-                
+                'user':chave,
                 'tarefa':texto,
                 'feito':conc,
                 'pk':pk
@@ -48,7 +47,7 @@ async function put(texto,conc,pk){
         .catch(error => console.log(error))
 }
 
-async function del(){
+async function del(pk){
     await fetch(
         `https://pyutilidades.onrender.com/api/tarefa/${chave}`,{
             method: 'DELETE',
@@ -56,7 +55,11 @@ async function del(){
             headers: {
                 'Content-Type':'application/json',
                 'Authorization':token
-            }
+            },
+            body: JSON.stringify({
+                'user':chave,
+                'pk':pk
+            })
         }
     
         )
@@ -179,7 +182,7 @@ function deletar(id){
     var conteiner = document.getElementById("conteiner-tarefa")
     var div = document.getElementById(id)
     conteiner.removeChild(div)
-    del()
+    del(pk=id)
 }
 
 
