@@ -23,7 +23,7 @@ from citacoes.views import CitacaoView
 from forca.views import Palavraview
 from autorizar.views import CadastroView,LoginView,AlteraView
 from blog.views import BlogView,ComentarioView,InteracaoView,AllBlogView,TagBlogView,TagView
-from questao.views import Questao_View,Questao_Detail_View,Alternativa_View
+from questao.views import Questao_View,Questao_Detail_View
 
 urlpatterns = [
     path('api/tarefa/', Tarefa_View.as_view()),
@@ -38,7 +38,6 @@ urlpatterns = [
     path('api/blog/inter/<int:pk>', InteracaoView.as_view()),
     path('api/questao/<str:filtro>', Questao_Detail_View.as_view()),
     path('api/questao/', Questao_View.as_view()),
-    path('api/alternativa/<int:pk>', Alternativa_View.as_view()),
     path('auth/cadastrar/', CadastroView.as_view(),name='cadastro'),
     path('auth/login/', LoginView.as_view(),name='login'),
     path('auth/edit/', AlteraView.as_view(),name='alterar'),
