@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'forca',
     'autorizar',
     'blog',
+    'questao'
 ]
 
 MIDDLEWARE = [
