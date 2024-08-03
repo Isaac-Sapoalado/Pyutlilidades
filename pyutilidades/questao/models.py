@@ -41,7 +41,7 @@ class Alternativa(models.Model):
     questao = models.ForeignKey(Questao,related_name='alternativa',on_delete=models.CASCADE)
 
     def __str__(self):
-      return self.alternativa
+      return f'{self.alternativa}--{self.certo}'
 
 
 Questao.save_base
